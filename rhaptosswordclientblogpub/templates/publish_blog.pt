@@ -1,0 +1,57 @@
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:tal="http://xml.zope.org/namespaces/tal"
+       xmlns:metal="http://xml.zope.org/namespaces/metal">
+
+        <metal:head use-macro="main.macros['head_macro']">
+        <span metal:fill-slot="page_title">
+            <title>Publish a blog post to a SWORD repo.</title>
+        </span>
+        </metal:head>
+
+        <metal:body use-macro="main.macros['body_macro']">
+        <div metal:fill-slot="heading">SWORD blog publisher.</div>
+         
+        <div metal:fill-slot="content">
+            <form action="/" method="post">
+                <input type="hidden" name="submitted" value="true" /> 
+                <fieldset name="url">
+                    <h4>Enter the RSS feed of the blog post you wish to package and send to a SWORD repository</h4>
+                    <label for="blog_post_url">URL to the RSS feed you want to publish</label><br />
+                    <input type="text" name="blog_post_url" size="50"/><br />
+                    <label for="target_repo_url">URL of the target repository</label><br />
+                    <input type="text" name="target_repo_url" size="50"/><br />
+                </fieldset>
+                <fieldset name="licencing">
+                    <h4>Tell us how you want the resources licenced</h4>
+                    <label for="licence">Select a licence</label><br />
+                    <select name="licence">
+                        <option>--</option>
+                        <option value="licence1">Licence 1</option>
+                        <option value="Licence2">Licence 2</option>
+                    </select>
+                </fieldset>
+                <fieldset name="tracking_code">
+                    <h4>Give us a google tracking code, if you want the resources tracked in the SWORD repository</h4>
+                    <label for="tracking_code">Enter a google tracking code</label><br />
+                    <input type="text" name="tracking" size="50"/><br />
+                </fieldset>
+                <fieldset name="credentials">
+                    <h4>Provide the credentials to the SWORD repository</h4>
+                    <label for="username">User name</label><br />
+                    <input type="text" name="username" size="10"><br />
+                    <label for="password">Password</label><br />
+                    <input type="text" name="password" size="10"><br />
+                    <h4>Select the collection to which you want to add</h4>
+                    <select name="collection" id="collection_list">
+                        <option>--</option>
+                        <option value="collection1">Collection 1</option>
+                        <option value="collection2">Collection 2</option>
+                    </select>
+                </fieldset>
+                <input type="submit" />
+            </form>
+        </div>
+
+        </metal:body>
+
+ </html>

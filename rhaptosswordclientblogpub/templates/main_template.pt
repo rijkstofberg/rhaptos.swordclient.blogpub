@@ -1,0 +1,48 @@
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:tal="http://xml.zope.org/namespaces/tal"
+       xmlns:metal="http://xml.zope.org/namespaces/metal">
+       
+    <metal:head_macro define-macro="head_macro">   
+    <head>
+        <metal:styles define-slot="css">
+        <link rel="stylesheet" href="/static/screen.css" />
+        <link rel="stylesheet" href="/static/styles.css" />
+        </metal:styles>
+
+        <metal:scripts define-slot="scripts">
+        <script type="text/javascript" src="/static/jquery-1.6.1.min.js"></script>
+        <script type="text/javascript" src="/static/collections.js"></script>
+        </metal:scripts>
+
+        <title>
+        <span metal:define-slot="page_title"> 
+            The page title
+        </span> 
+        </title>
+    </head>
+    </metal:head_macro>
+
+    <metal:body_macro define-macro="body_macro">   
+    <body>
+        <div id="main_wrapper">
+
+        <h1>
+            <span metal:define-slot="heading">Page heading</span>
+        </h1>
+        
+        <div class="app_messages"
+            tal:condition="messages">
+            <div tal:repeat="message_key messages">   
+                <span tal:content="messages[message_key]">message</span>
+            </div>   
+        </div>
+        
+        <div metal:define-slot="content">
+            Body content
+        </div>
+
+        </div>
+    </body>
+    </metal:body_macro>   
+
+</html>
