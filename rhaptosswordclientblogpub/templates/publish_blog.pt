@@ -23,6 +23,15 @@
                 </fieldset>
                 <fieldset name="licencing">
                     <h4>Tell us how you want the resources licenced</h4>
+                    <p>
+                        You can read more about Open Source licencing here:
+                    </p>
+                    <p>
+                    <a href="http://creativecommons.org/licenses/">Creative Commons</a>
+                    </p>
+                    <p>
+                        <a href="http://www.opensource.org/licenses/alphabetical">Open Source Organization</a>
+                    </p>
                     <label for="licence">Select a licence</label><br />
                     <select name="licence">
                         <option>--</option>
