@@ -2,15 +2,13 @@ Pyramid has very good documentation; view it at:
     http://docs.pylonsproject.org/docs/pyramid.html
 
 Now let's prepare the environment:
-In a directory of your choice, do the following:
+Assuming that you want the project to live in a directory called 'rhaptos', do the following:
 * mkdir rhaptos
 * cd rhaptos
 * git clone git@github.com:rijkstofberg/rhaptos.swordclient.blogpub.git .
 * virtualenv --no-site-packages .
-* ./bin/easy_install pyramid
-* ./bin/easy_install nose coverage
-* cd ./rhaptosswordclientblogpub
-* ../bin/python setup.py develop
+* ./bin/easy_install pyramid sqlalchemy zope.sqlalchemy nose coverage
+* ./bin/python setup.py develop
 
 Start the blog publishing sword service
-* ../bin/paster serve development.ini
+* ./bin/paster serve development.ini
